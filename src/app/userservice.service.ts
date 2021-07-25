@@ -9,5 +9,8 @@ import { HttpClient} from '@angular/common/http';
 export class UserserviceService {
   foundUser:User;
   allRepos:Repos;
-  constructor() { }
+  constructor(private http:HttpClient) { 
+    this.foundUser = new User("","","","",0,0,0,"",new Date);
+    this.allRepos =new Repos("","","",new Date,0,0,"");
+  }
 }
