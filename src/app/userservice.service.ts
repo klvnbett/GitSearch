@@ -40,4 +40,30 @@ export class UserserviceService {
       );
     });
   }
+  getRepos(searchName){
+    interface Repos{
+      name:string;
+      html_url:string;
+      description:string;
+      forks:number;
+      count:number;
+      createdOn:Date;
+      lang:string;
+    }
+    return new Promise((resolve,reject)=>{
+    this.http.get<Repos>('https://api.github.com/users/'+searchName+"/repos?order=created&sort=asc?access_token"+environment.apiKey).toPromise().then(
+      (results)=>{
+        this.allRepos=results;
+        resolve();
+      },
+      (error)=>{
+        console.log(error);
+        reject();
+      }
+    );
+    });
+  } 
+    
+    
+ 
 }
