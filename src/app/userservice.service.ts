@@ -7,6 +7,7 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserserviceService {
-
+  foundUser:User;
+  allRepos:Repos;
   constructor() { }
 }
