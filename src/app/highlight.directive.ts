@@ -11,7 +11,7 @@ export class HighlightDirective {
     this.highlight('blue');
   }
   @HostListener('mouseleave') onMouseLeave(){
-    this.highlight(null);
+    this.highlight("None");
   }
   private highlight(color:string){
     this.el.nativeElement.style.backgroundColor=color;
