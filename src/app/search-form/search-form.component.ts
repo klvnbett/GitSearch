@@ -12,5 +12,8 @@ export class SearchFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  search(){
+    this.searchOutput.emit(this.searchName);
+    this.searchName="";
+  }
 }
