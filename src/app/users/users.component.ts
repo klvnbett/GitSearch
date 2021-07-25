@@ -24,9 +24,19 @@ export class UsersComponent implements OnInit {
       }
       
     );
+    this.repoService.getrepos(searchName).then(
+      (results)=>{
+        this.repoService.allRepos
+        console.log(this.repo);
+      }
+      (error)=>{
+        console.log(error);
+      }
+    );
   }
 
   ngOnInit(): void {
+    this.searchs('klvnbett');
   }
 
 }
