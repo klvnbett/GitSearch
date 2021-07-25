@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from './models/user';
 import { Repos } from './models/repos';
 import { HttpClient} from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,19 @@ export class UserserviceService {
       avatar_url:string;
       createdOn:Date;
     }
+    return new Promise((resolve,reject)=>{
+      this.http.get<response>('https://api.com/users/'+searchName+
+      '?access_token='+environment.apiKey).toPromise().then(
+        (result)=>{
+          this.foundUser=result;
+          console.log(this.foundUser);
+          resolve();
+        },
+        (error)=>{
+          console.log(error);
+          reject();
+        }
+      );
+    });
   }
 }
