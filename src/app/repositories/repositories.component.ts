@@ -15,12 +15,17 @@ export class RepositoriesComponent implements OnInit {
     this.repoService.getRepos(searchName).then(
       (results)=>{
         this.repo=this.repoService.allRepos
-        console.log(thius.repo);
+        console.log(this.repo);
+      },
+      (error:any)=>{
+        console.log(error);
       }
-    )
+      );
+    
   }
 
   ngOnInit(): void {
+    this.repoSearch('klvnbett');
   }
 
 }
