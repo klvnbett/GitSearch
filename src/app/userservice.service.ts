@@ -22,16 +22,17 @@ export class UserserviceService {
       loc:string;
       reposits:number;
       followers:number;
-      avatar_url:string;
+      following:number;
+      avataurl:string;
       createdOn:Date;
     }
     return new Promise((resolve,reject)=>{
-      this.http.get<response>('https://api.com/users/'+searchName+
+      this.http.get<Response>('https://api.com/users/'+searchName+
       '?access_token='+environment.apiKey).toPromise().then(
         (result)=>{
           this.foundUser=result;
           console.log(this.foundUser);
-          resolve();
+          resolve(null);
         },
         (error)=>{
           console.log(error);
@@ -40,7 +41,7 @@ export class UserserviceService {
       );
     });
   }
-  getRepos(searchName){
+  getRepos(searchName:any){
     interface Repos{
       name:string;
       html_url:string;
@@ -54,7 +55,7 @@ export class UserserviceService {
     this.http.get<Repos>('https://api.github.com/users/'+searchName+"/repos?order=created&sort=asc?access_token"+environment.apiKey).toPromise().then(
       (results)=>{
         this.allRepos=results;
-        resolve();
+        resolve(null);
       },
       (error)=>{
         console.log(error);
