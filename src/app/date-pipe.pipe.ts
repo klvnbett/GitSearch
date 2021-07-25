@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Pipe({
   name: 'datePipe'
@@ -10,7 +11,7 @@ export class DatePipePipe implements PipeTransform {
       const seconds =Math.floor((+new Date()-+new Date(value))/1000);
       if(seconds<29)
       return 'just now';
-      const intervals ={
+      const intervals:{[interval:string]:number} ={
         'year':31536000,
         'month':2592000,
         'week':604800,
