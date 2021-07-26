@@ -9,24 +9,29 @@ import { environment } from 'src/environments/environment.prod';
 export class UserserviceService {
   foundUser: User;
   allRepos: Repos;
+ 
+
   constructor(private http: HttpClient) {
-    this.foundUser = new User("", "", "", "", 0, 0, 0, "", new Date);
-    this.allRepos = new Repos("", "", "", new Date, 0, 0, "");
+    this.foundUser = new User("","","","",0,0,0,"",new Date);
+    this.allRepos = new Repos("","","",new Date,0,0,"");
   }
+
   searchUSer(searchName: string) {
-    interface Responce {
-      url: string,
+   
+    interface Response {
+      url:string,
       login: string;
-      html_url: string;
-      loc: string
-      reposits: number;
-      followers: number;
-      following: number;
-      avataurl: string;
-      createdOn: Date;
+      html_url:string;
+      location:string
+      public_repos:number;
+      followers:number;
+      following:number;
+      avatar_url:string;
+      created_at:Date;
     }
-    return new Promise((resolve: any, reject) => {
-      this.http.get<Responce>('https://api.github.com/users/' + searchName + '?access_token=' + environment.apiKey).toPromise().then(
+
+    return new Promise((resolve:any, reject) => {
+      this.http.get<Response>('https://api.github.com/users/'+searchName+'?access_token='+environment.apiKey).toPromise().then(
         (result) => {
           this.foundUser = result;
           console.log(this.foundUser);
@@ -39,18 +44,18 @@ export class UserserviceService {
       );
     });
   }
-  getRepos(searchName: any) {
-    interface Repos {
-      name: string;
-      html_url: string;
-      description: string;
-      forks: number;
-      count: number;
-      lang: string;
-      createdOn: Date;
+  getRepos(searchName:any){
+    interface Repos{
+      name:string;
+      html_url:string;
+      description:string;
+      forks:number;
+      watchers_count:number;
+      language:string;
+      created_at:Date;
     }
-    return new Promise((resolve: any, reject) => {
-      this.http.get<Repos>('https://api.github.com/users/' + searchName + "/repos?order=created&sort=asc?access_token=" + environment.apiKey).toPromise().then(
+    return new Promise((resolve:any,reject)=>{
+      this.http.get<Repos>('https://api.github.com/users/'+searchName+"/repos?order=created&sort=asc?access_token=" +environment.apiKey).toPromise().then(
         (results) => {
           this.allRepos = results;
           resolve();
@@ -63,3 +68,4 @@ export class UserserviceService {
     });
   }
 }
+
