@@ -1,1 +1,39 @@
-<p>users works!</p>
+<div class="container-fluid">
+    <ng-progress></ng-progress>
+    <div class="overlay">
+        <app-search-form (searchOutput)="searchs($event)"></app-search-form>
+        <div class="text-center repos" id="reposits">
+            <h2>REPOSITORIES</h2>
+        </div>
+        <div class="container allrepos">
+            <div class="card" appHighlight *ngFor="let repositrry of repo" style="width: 355px;" class="repo">
+                <div class="card-body">
+                    <h5 class="card-title">{{repositrry.name}}</h5><br>
+                    <div class="card-text">
+                        <hr>
+                        <div class="desc"><span class="top">Description</span>&nbsp;{{repositrry.description}}</div>
+                        <hr>
+                        <div class="card-subtitle mb-2">
+                            <span class="top">Language</span>{{repositrry.lang}}
+                        </div>
+                        <div class="card-subtitle mb-2">
+                            <span class="top">created On</span>&nbsp;{{repositrry.createdOn| datePipe}}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="btn-group" role="group" aria-label="Third group">
+                        <button class="btn btn-sm btn-info"><i class="fa fa-eye"style="font-size:20px"></i>{{repositrry.count}}</button>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Third group">
+                        <button class="btn btn-sm btn-outline-danger"><i class="fa fa-code-fork"style="font-size:20px"></i>{{repositrry.count}}</button>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Third group">
+                        <button class="btn btn-sm btn-success" id="visit"> <a href="{{repositrry.html_url}}" class="card-link">view &nbsp; <i class="fa fa-arrow-circle-right"style="font-size:20px"></i>></a> href="{</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
