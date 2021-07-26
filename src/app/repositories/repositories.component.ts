@@ -11,13 +11,13 @@ export class RepositoriesComponent implements OnInit {
   repo!:Repos;;
 
   constructor(public repoService:UserserviceService) { }
-  repoSearch(searchName){
+  repoSearch(searchName:any){
     this.repoService.getRepos(searchName).then(
       (results)=>{
         this.repo=this.repoService.allRepos
         console.log(this.repo);
       },
-      (error:any)=>{
+      (error)=>{
         console.log(error);
       }
       );
