@@ -14,7 +14,7 @@ export class UsersComponent implements OnInit {
   repo!:Repos;
 
   constructor(public myService:UserserviceService,private repoService:UserserviceService) { }
-  searchs(searchName){
+  searchs(searchName:any){
     this.myService.searchUser(searchName).then(
       (success)=>{
         this.user=this.myService.foundUser;
@@ -24,12 +24,12 @@ export class UsersComponent implements OnInit {
       }
       
     );
-    this.repoService.getrepos(searchName).then(
-      (results)=>{
+    this.repoService.getRepos(searchName).then(
+      (results:any)=>{
         this.repoService.allRepos
         console.log(this.repo);
-      }
-      (error)=>{
+      },
+      (error:any)=>{
         console.log(error);
       }
     );

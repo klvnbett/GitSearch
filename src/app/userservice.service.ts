@@ -26,13 +26,13 @@ export class UserserviceService {
       avataurl:string;
       createdOn:Date;
     }
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve:any,reject)=>{
       this.http.get<Response>('https://api.com/users/'+searchName+
       '?access_token='+environment.apiKey).toPromise().then(
         (result)=>{
           this.foundUser=result;
           console.log(this.foundUser);
-          resolve(null);
+          resolve();
         },
         (error)=>{
           console.log(error);
@@ -51,11 +51,11 @@ export class UserserviceService {
       createdOn:Date;
       lang:string;
     }
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve:any,reject)=>{
     this.http.get<Repos>('https://api.github.com/users/'+searchName+"/repos?order=created&sort=asc?access_token"+environment.apiKey).toPromise().then(
       (results)=>{
         this.allRepos=results;
-        resolve(null);
+        resolve();
       },
       (error)=>{
         console.log(error);
