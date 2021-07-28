@@ -17,8 +17,11 @@
                                 </div>
                             </div>
                             <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-                                <div class="d-flex justify-content-between">
+                                <!-- <div class="d-flex justify-content-between">
                                     <a href="#" class="btn btn-sm btn-info mr-4">Follow</a>
+                                </div> -->
+                                <div class="card-body">
+                                    <!-- <span class="name"><i class="fa fa-user" style="font-size:20px"></i> &nbsp;{{users.login}}</span> <a href="{{users.html_url}}"><button class="btn-outline-success btn btn-sm"><i class="fa fa-github" style="font-size:20px"></i> &nbsp; <span id="profile">View Github</span> </button></a> -->
                                 </div>
                             </div>
                             <div class="card-body pt-0 pt-md-4">
@@ -41,7 +44,7 @@
                                     </div>
                                 </div>
                                 <div class="text-center">
-                                    <h3 class="user">{{users.login}}</h3>
+                                    <h3 class="user fa fa-user">{{users.login}} <br><a href="{{users.html_url}}"><button class="btn-outline-success btn btn-sm"><i class="fa fa-github" style="font-size:20px"></i> &nbsp; <span id="profile">View Github</span> </button></a></h3>
                                     <div class="h5 font-weight-300">
                                         <span class="description">Joined:</span>
                                         <i class="ni location_pin mr-2"></i>{{users.created_at| datepipe}}

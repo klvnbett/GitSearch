@@ -16,10 +16,25 @@
                 <p id="rlang">{{repo.language}}</p>
             </div>
             <div class="card-footer flex-footer">
-                <p id="rwatchers" class="text-center">Watchers <span class="data">{{repo.watchers}}</span></p>
-                <p id="rforks" class="text-center">Forks <span class="data">{{repo.forks}}</span></p>
-                <p id="rbranch" class="text-center">Branch <span class="data">{{repo.default_branch}} </span></p>
+                <div class="btn-group" role="group" aria-label="Third group">
+                    <button class="btn btn-sm btn-info"><i class="fa fa-eye" style="font-size:30px"> </i> {{repo.watchers}}</button>
+                </div>
+                <div class="btn-group" role="group" aria-label="Third group">
+                    <button class="btn btn-sm btn-info"><i class="fa fa-code-fork" style="font-size:30px"> </i> {{repo.forks}}</button>
+                </div>
+                <div class="btn-group" role="group" aria-label="Third group">
+                    <button class="btn btn-sm btn-outline-danger" id="visit"><a href="{{repo.html_url}}" class="card-link">View repository &nbsp; <i class="fa fa-arrow-circle-right" style="font-size:30px"></i></a> </button>
+                </div>
+                <!-- <div class="btn-group" role="group" aria-label="Third group">
+                    <button class="btn btn-sm btn-info"><i class="fa fa-eye" style="font-size:16px"> </i> {{repo.default_branch}}</button>
+                </div>
+                 <p id="rwatchers" class="text-center fa fa-eye" style="font-size:30px">Watchers <span class="data">{{repo.watchers}}</span></p> -->
+                <!-- <p id="rforks" class="text-center fa fa-code-fork" style="font-size:30px">Forks <span class="data">{{repo.forks}}</span></p>
+                <p id="rbranch" class="text-center" style="font-size :20px">Branch <span class="data">{{repo.default_branch}} </span></p>
+            </div>
+            <div class="btn-group" role="group" aria-label="Third group">
+                <button class="btn btn-sm btn-outline-danger" id="visit"><a href="{{repo.html_url}}" class="card-link">View repository &nbsp; <i class="fa fa-arrow-circle-right" style="font-size:30px"></i></a> </button>
+            </div> -->
             </div>
         </div>
     </div>
-</div>

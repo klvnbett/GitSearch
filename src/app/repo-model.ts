@@ -7,5 +7,6 @@ export class RepoModel {
   // tslint:disable-next-line:variable-name
   default_branch: any;
   language: any;
+  html_url:any;
 
 }
