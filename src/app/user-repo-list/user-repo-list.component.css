@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Gruppo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Averia+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+.flex-footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.jumbotron {
+    border-radius: 25px;
+    background-color: #56c5e0;
+}
+
+.card-header {
+    color: aqua;
+}
+
+.card-footer {
+    background-color: white;
+    color: black;
+}
+
+.repo-number {
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#num {
+    color: rgb(248, 16, 47);
+}
+
+#rname {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(44, 62, 221);
+    font-size: 30px;
+}
+
+#rbranch,
+#rdesc,
+#rlang,
+#rforks {}
+
+#rwatchers {
+    font-size: 17px;
+    margin: 5px;
+    font-family: 'Roboto Mono', system-ui, serif;
+    font-weight: bold;
+}
+
+.data {
+    font-family: 'Roboto Mono', system-ui, serif;
+    font-weight: lighter;
+    color: darkblue;
+}

@@ -1,0 +1,53 @@
+.jumbotron {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.jumbotron {
+    border-radius: 30px;
+}
+
+.contents {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-img {
+    height: 300px;
+    width: 300px;
+}
+
+.overlay {
+    background-color: rgba(22, 90, 102, 0);
+    height: inherit;
+}
+
+.user {
+    font-size: 30px;
+    color: black;
+}
+
+.gsearch {
+    font-size: 60px;
+    color: rgb(235, 117, 143);
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.footer-text {
+    font-family: system-ui, serif;
+    padding-top: 20px;
+    padding-bottom: -40px;
+    color: white;
+}
+
+#fa-love {
+    color: red;
+    opacity: 0.7;
+}
+
+.fa {
+    color: red;
+}

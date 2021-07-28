@@ -1,19 +1,20 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { UsersComponent } from './users/users.component';
-import { RepositoriesComponent } from './repositories/repositories.component';
-import {  NotfoundComponent } from './notfound/notfound.component';
-
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+// tslint:disable-next-line:import-spacing
+import {UserDataComponent} from './user-data/user-data.component';
+import {NotFoundComponent} from './not-found/not-found.component';
+import {UserRepoListComponent} from './user-repo-list/user-repo-list.component';
 
 const routes: Routes = [
-  {path:"user-profile", component:UsersComponent},
-  {path:"search-repo", component:RepositoriesComponent},
-  {path: "", redirectTo:"/user-profile", pathMatch:"full"},
-  {path:"**",component:NotfoundComponent}
+  {path: 'user-list', component: UserDataComponent},
+  {path: 'repo-list', component: UserRepoListComponent},
+  {path: '', redirectTo: '/user-list', pathMatch: 'full'},
+  {path: '**', component : NotFoundComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

@@ -1,41 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-import { UsersComponent } from './users/users.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SearchFormComponent } from './search-form/search-form.component';
-import { RepositoriesComponent } from './repositories/repositories.component';
-import { NotfoundComponent } from './notfound/notfound.component';
-import { UserserviceService } from './userservice.service';
-import { HighlightDirective } from './highlight.directive';
-import { DatePipePipe } from './date-pipe.pipe';
-import { NgProgressModule } from '@ngx-progressbar/core';
-import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
+import { UserDataComponent } from './user-data/user-data.component';
+import { NavComponent } from './nav/nav.component';
+import { SearchUserComponent } from './search-user/search-user.component';
+import { UserRepoListComponent } from './user-repo-list/user-repo-list.component';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { DatepipePipe } from './datepipe.pipe';
+import { LogoHighlightDirective } from './logo-highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent,
-    NavbarComponent,
-    SearchFormComponent,
-    RepositoriesComponent,
-    NotfoundComponent,
-    HighlightDirective,
-    DatePipePipe,
-    
+    UserDataComponent,
+    NavComponent,
+    SearchUserComponent,
+    UserRepoListComponent,
+    NotFoundComponent,
+    DatepipePipe,
+    LogoHighlightDirective
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     AppRoutingModule,
-    HttpClientModule,
-    NgProgressModule.forRoot(),
-    NgProgressHttpClientModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [UserserviceService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
