@@ -11,7 +11,6 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DatepipePipe } from './datepipe.pipe';
-import { LogoHighlightDirective } from './logo-highlight.directive';
 import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
@@ -23,7 +22,6 @@ import { HighlightDirective } from './highlight.directive';
     UserRepoListComponent,
     NotFoundComponent,
     DatepipePipe,
-    LogoHighlightDirective,
     HighlightDirective
   ],
   imports: [
