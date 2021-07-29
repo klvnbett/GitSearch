@@ -12,12 +12,16 @@
 }
 
 .card-header {
-    color: aqua;
+    color: white;
 }
 
 .card-footer {
     background-color: white;
     color: black;
+}
+
+.card-columns {
+    height: 40vh;
 }
 
 .repo-number {

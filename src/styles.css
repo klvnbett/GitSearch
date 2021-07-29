@@ -136,7 +136,7 @@ hr {
 .card {
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: columns;
     min-width: 10px;
     word-wrap: break-word;
     border: 5px solid black;
@@ -151,12 +151,12 @@ hr {
 /* .card>hr {
     margin-right: 0;
     margin-left: 0;
-}
+}*/
 
 .card-body {
-    padding: 1.5rem;
-    flex: 1 1 auto;
-} */
+    height: 40vh;
+    width: 30%;
+}
 
 
 /* .card-header {
