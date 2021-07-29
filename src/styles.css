@@ -136,7 +136,7 @@ hr {
 .card {
     position: relative;
     display: flex;
-    flex-direction: columns;
+    flex-direction: column;
     min-width: 10px;
     word-wrap: break-word;
     border: 5px solid black;
@@ -153,10 +153,11 @@ hr {
     margin-left: 0;
 }*/
 
-.card-body {
+
+/* .card-body {
     height: 40vh;
     width: 30%;
-}
+} */
 
 
 /* .card-header {
